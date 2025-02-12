@@ -1,6 +1,5 @@
 # Timeless Jewel Data
-
-A web app for Path of Exile players to discover and contribute to the database of alternate passive transformations for Timeless Jewels.
+For Path of Exile 2.
 
 **[Live Application](https://mbyphishing.github.io/Timeless-Jewel-Data/)**
 
