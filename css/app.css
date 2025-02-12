@@ -1,0 +1,239 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* Prevent page scroll */
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-color: rgb(15, 15, 15);
+    color: white;
+}
+#submitNotables {
+    background-color: coral;/* Green gradient */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+    #submitNotables:hover {
+        background-color: coral; /* Slightly darker on hover */
+        transform: scale(1.03); /* Slight zoom */
+    }
+
+    #submitNotables:active {
+        transform: scale(0.98); /* Slight press down effect */
+    }
+
+
+#alternate-summary h4 {
+    font-size:22px;
+}
+
+.notable-node.highlighted {
+    stroke-width: 12; /* Thicker ring for visibility */
+    fill: white; /* Make sure the fill is transparent so the ring is visible */
+    animation: rainbowColorCycle 2s infinite linear; /* Longer animation duration for smooth transition */
+}
+
+
+.loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#zoom-pan-wrapper {
+    transform: translate(500, 500);
+}
+
+
+#passive-tree-svg {
+    width: 100vw; /* Full width of viewport */
+    height: 100vw; /* Full height of viewport */
+    position: relative;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+#notable-list {
+    font-size: 20px;
+}
+
+#notable-list-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgb(25, 27, 43, 0.82);
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 600px;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align items to the left */
+    justify-content: flex-start; /* Align content to the top */
+}
+    #notable-list-container h2 {
+        text-align: center; /* Center the text horizontally */
+        margin: 0; /* Remove default margin */
+        padding-bottom: 10px; /* Add space below the title */
+        width: 100%; /* Ensure the header takes full width to center */
+    }
+    #notable-list-container label {
+        display: flex;
+        align-items: center;
+        margin-bottom: 5px; /* Reduce the bottom margin to minimize the space between label and input */
+    }
+
+.jewel-socket-ring {
+    stroke-width: 8; /* Thicker ring for visibility */
+    fill: none; /* Make sure the fill is transparent so the ring is visible */
+    animation: rainbowColorCycle 24s infinite linear; /* Longer animation duration for smooth transition */
+}
+
+/* Rainbow solid color animation */
+@keyframes rainbowColorCycle {
+    0% {
+        stroke: red;
+    }
+
+    15% {
+        stroke: orange;
+    }
+
+    30% {
+        stroke: yellow;
+    }
+
+    45% {
+        stroke: limegreen;
+    }
+
+    60% {
+        stroke: cyan;
+    }
+
+    85% {
+        stroke: hotpink;
+    }
+
+    100% {
+        stroke: red;
+    }
+}
+
+.summary-item {
+    cursor: pointer;
+    padding: 2px;
+    font-size: 24px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+#seed {
+    font-size: 24px;
+    width: 100%;
+    padding: 8px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+/* Make sure the form appears above the SVG */
+#input-form {
+    position: absolute; /* Make it absolute so it can overlay */
+    top: 20px; /* Adjust the distance from the top if needed */
+    left: 20px; /* Adjust the distance from the left if needed */
+    z-index: 1000; /* Ensure it's above the SVG */
+    background: rgb(25, 27, 43, 0.82); /* Add a semi-transparent background for readability */
+    padding: 15px;
+    border-radius: 8px;
+    color: white; /* Change text color for contrast */
+    width: 350px; /* Set width of the form */
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+    #input-form label {
+        font-size: 24px;
+    }
+
+    /* Optional: Style the inputs and button */
+    #input-form input,
+    #input-form select {
+        width: 100%;
+        padding: 0px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 24px;
+        background: rgb(25, 27, 43, 0.82);
+        color: white;s
+    }
+
+#summary-container {
+    position: absolute;
+    top: 0px; /* Adjust as needed */
+    right: 650px; /* Adjust as needed */
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    z-index: 9999; /* Ensure it's above the SVG */
+    max-width: 300px;
+    overflow-y: auto;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    background: rgb(25, 27, 43, 0.82);
+}
+
+#notable-list-container input[type="text"] {
+    font-size: 18px;
+    padding: 5px; /* Adjust padding inside the input */
+    margin-left: 20px; /* Add some space between label and input */
+    background: rgb(25, 27, 43, 0.82);
+    color: white;
+    border: 1px solid #ccc; /* Border for input box */
+    border-radius: 4px;
+    width: 50%; /* Limit the width of the input box to 40% of the container */
+    max-width: 250px; /* Maximum width of the input box */
+}
+
+#input-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+#submitNotables {
+    width: 100%;
+    padding: 10px;
+    background-color: #0094ff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+        #input-form button:hover {
+            background-color: #45a049;
+        }

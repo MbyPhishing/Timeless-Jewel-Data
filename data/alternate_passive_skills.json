@@ -1,0 +1,224 @@
+{
+	"1": {
+		"Id": "kalguur_notable1",
+		"Skill": "Scorched Earth",
+		"SpawnWeight": 1000,
+		"PassiveType": [ 1 ]
+	},
+	"2": {
+		"Id": "kalguur_notable2",
+		"Skill": "War Tactics",
+		"SpawnWeight": 1000,
+		"PassiveType": [ 1 ]
+	},
+	"3": {
+		"Id": "kalguur_notable3",
+		"Skill": "Kalguuran Forged",
+		"SpawnWeight": 250,
+		"PassiveType": [ 1 ]
+	},
+	"4": {
+		"Id": "kalguur_notable4",
+		"Skill": "Born of Middengard",
+		"SpawnWeight": 1000,
+		"PassiveType": [ 1 ]
+	},
+	"5": {
+		"Id": "kalguur_notable5",
+		"Skill": "Force of Will",
+		"SpawnWeight": 500,
+		"PassiveType": [ 1 ]
+	},
+	"6": {
+		"Id": "kalguur_notable6",
+		"Skill": "Runic Flows",
+		"SpawnWeight": 500,
+		"PassiveType": [ 1 ]
+	},
+	"7": {
+		"Id": "kalguur_notable7",
+		"Skill": "Siege Mentality",
+		"SpawnWeight": 500,
+		"PassiveType": [ 1 ]
+	},
+	"8": {
+		"Id": "kalguur_notable8",
+		"Skill": "Rune Knight",
+		"SpawnWeight": 500,
+		"PassiveType": [ 1 ]
+	},
+	"9": {
+		"Id": "kalguur_notable9",
+		"Skill": "Fiery Leadership",
+		"SpawnWeight": 500,
+		"PassiveType": [ 1 ]
+	},
+	"10": {
+		"Id": "kalguur_notable10",
+		"Skill": "Druidic Alliance",
+		"SpawnWeight": 500,
+		"PassiveType": [ 1 ]
+	},
+	"11": {
+		"Id": "kalguur_notable11",
+		"Skill": "Steel and Sorcery",
+		"SpawnWeight": 500,
+		"PassiveType": [ 1 ]
+	},
+	"12": {
+		"Id": "kalguur_notable12",
+		"Skill": "Triskelions Light",
+		"SpawnWeight": 500,
+		"PassiveType": [ 1 ]
+	},
+	"13": {
+		"Id": "kalguur_notable13",
+		"Skill": "Stormtossed Voyager",
+		"SpawnWeight": 250,
+		"PassiveType": [ 1 ]
+	},
+	"14": {
+		"Id": "kalguur_notable14",
+		"Skill": "Wrest Control",
+		"SpawnWeight": 1000,
+		"PassiveType": [ 1 ]
+	},
+	"15": {
+		"Id": "kalguur_notable15",
+		"Skill": "Firedancer",
+		"SpawnWeight": 1000,
+		"PassiveType": [ 1 ]
+	},
+	"16": {
+		"Id": "kalguur_notable16",
+		"Skill": "Mercenarys Lot",
+		"SpawnWeight": 500,
+		"PassiveType": [ 1 ]
+	},
+	"17": {
+		"Id": "kalguur_notable17",
+		"Skill": "Voranas Fury",
+		"SpawnWeight": 500,
+		"PassiveType": [ 1 ]
+	},
+	"18": {
+		"Id": "kalguur_notable18",
+		"Skill": "Sensible Precautions",
+		"SpawnWeight": 500,
+		"PassiveType": [ 1 ]
+	},
+	"19": {
+		"Id": "kalguur_notable19",
+		"Skill": "Aim for the Jugular",
+		"SpawnWeight": 500,
+		"PassiveType": [ 1 ]
+	},
+	"20": {
+		"Id": "kalguur_notable20",
+		"Skill": "Survival Plan",
+		"SpawnWeight": 500,
+		"PassiveType": [ 1 ]
+	},
+	"21": {
+		"Id": "kalguur_notable21",
+		"Skill": "War of Attrition",
+		"SpawnWeight": 500,
+		"PassiveType": [ 1 ]
+	},
+	"22": {
+		"Id": "kalguur_notable22",
+		"Skill": "Guerilla Warfare",
+		"SpawnWeight": 500,
+		"PassiveType": [ 1 ]
+	},
+	"23": {
+		"Id": "kalguur_notable23",
+		"Skill": "One for the Road",
+		"SpawnWeight": 500,
+		"PassiveType": [ 1 ]
+	},
+	"24": {
+		"Id": "kalguur_notable24",
+		"Skill": "Targeted Strike",
+		"SpawnWeight": 500,
+		"PassiveType": [ 1 ]
+	},
+	"25": {
+		"Id": "kalguur_notable25",
+		"Skill": "Steel Bastion",
+		"SpawnWeight": 500,
+		"PassiveType": [ 1 ]
+	},
+	"26": {
+		"Id": "kalguur_notable26",
+		"Skill": "Forceful Energies",
+		"SpawnWeight": 500,
+		"PassiveType": [ 1 ]
+	},
+	"27": {
+		"Id": "kalguur_notable27",
+		"Skill": "Winter Forest",
+		"SpawnWeight": 1000,
+		"PassiveType": [ 1 ]
+	},
+	"28": {
+		"Id": "kalguur_notable28",
+		"Skill": "Fight as One",
+		"SpawnWeight": 500,
+		"PassiveType": [ 1 ]
+	},
+	"29": {
+		"Id": "kalguur_notable29",
+		"Skill": "Summer Meadows",
+		"SpawnWeight": 500,
+		"PassiveType": [ 1 ]
+	},
+	"30": {
+		"Id": "kalguur_notable30",
+		"Skill": "Druidic Training",
+		"SpawnWeight": 500,
+		"PassiveType": [ 1 ]
+	},
+	"31": {
+		"Id": "kalguur_notable31",
+		"Skill": "Corrupted Vision",
+		"SpawnWeight": 500,
+		"PassiveType": [ 1 ]
+	},
+	"32": {
+		"Id": "kalguur_notable32",
+		"Skill": "Runic Tattoos",
+		"SpawnWeight": 500,
+		"PassiveType": [ 1 ]
+	},
+	"33": {
+		"Id": "kalguur_notable33",
+		"Skill": "Furs and Leather",
+		"SpawnWeight": 250,
+		"PassiveType": [ 1 ]
+	},
+	"34": {
+		"Id": "kalguur_notable34",
+		"Skill": "Sudden Hail",
+		"SpawnWeight": 500,
+		"PassiveType": [ 1 ]
+	},
+	"35": {
+		"Id": "kalguur_notable35",
+		"Skill": "Natural Energies",
+		"SpawnWeight": 1000,
+		"PassiveType": [ 1 ]
+	},
+	"36": {
+		"Id": "kalguur_notable36",
+		"Skill": "Oaken Form",
+		"SpawnWeight": 500,
+		"PassiveType": [ 1 ]
+	},
+	"37": {
+		"Id": "kalguur_notable37",
+		"Skill": "Spiders Lesson",
+		"SpawnWeight": 500,
+		"PassiveType": [ 1 ]
+	}
+}

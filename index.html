@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PoE2 Passive Tree</title>
+    <base href="/" />
+    <link href="css/app.css" rel="stylesheet" />
+</head>
+<body>
+    <!-- The root div with id="app" is where Blazor will mount the app -->
+    <div id="app"></div>
+    <div id="notable-list-container">
+        <h2>Notables In Radius</h2>
+        <ul id="notable-list"></ul>
+    </div>
+
+    <div id="summary-container" style="margin-top: 20px;">
+    </div>
+
+    <!-- Form for seed and conqueror input -->
+    <div id="input-form" style="display: block;">
+        <h1>Input Seed and Conqueror</h1>
+        <label for="seed">Seed Number (100-8000):</label>
+        <input type="number" id="seed" min="100" max="8000" value="100" required />
+
+        <label for="conqueror">Conqueror:</label>
+        <select id="conqueror">
+            <option value="Vorana">Vorana</option>
+            <option value="Medved">Medved</option>
+            <option value="Olroth">Olroth</option>
+        </select>
+    </div>
+    <div id="tooltip" style="
+    position: absolute;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 24px;
+    white-space: nowrap;
+    display: none;
+    pointer-events: none;
+    font-family:Arial, Helvetica, sans-serif;" />
+
+
+    <script src="_framework/blazor.webassembly.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <script src="js/backbone.js"></script>
+</body>
+</html>
