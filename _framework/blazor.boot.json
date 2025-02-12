@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "PoE2PassiveTree",
   "resources": {
-    "hash": "sha256-nUXJCLJ3ZRkFFBL2Znef/pW7wY/R4b29oLL1/20DZQI=",
+    "hash": "sha256-dBQLXLbQIQ6qL2B8xVmi+JYC4WaGcOGk7KLtvD/9k1c=",
     "fingerprinting": {
       "Microsoft.AspNetCore.Components.kwj4mz0u3h.wasm": "Microsoft.AspNetCore.Components.wasm",
       "Microsoft.AspNetCore.Components.Web.7h7pnwzpau.wasm": "Microsoft.AspNetCore.Components.Web.wasm",
@@ -19,7 +19,7 @@
       "Microsoft.JSInterop.iknej2zdh8.wasm": "Microsoft.JSInterop.wasm",
       "Microsoft.JSInterop.WebAssembly.8eb000j8w7.wasm": "Microsoft.JSInterop.WebAssembly.wasm",
       "Newtonsoft.Json.qkbufwhni2.wasm": "Newtonsoft.Json.wasm",
-      "PoE2PassiveTree.f4f5mmgb8q.wasm": "PoE2PassiveTree.wasm",
+      "PoE2PassiveTree.5sq6ctermy.wasm": "PoE2PassiveTree.wasm",
       "System.Collections.Concurrent.dtlyx5buga.wasm": "System.Collections.Concurrent.wasm",
       "System.Collections.Immutable.7pu3oqzllx.wasm": "System.Collections.Immutable.wasm",
       "System.Collections.NonGeneric.uml39a9tnh.wasm": "System.Collections.NonGeneric.wasm",
@@ -108,7 +108,7 @@
       "Microsoft.JSInterop.iknej2zdh8.wasm": "sha256-LuYfR4a5fwfclUwXPnTjZGpINIjF23AhCZmTFWP2xbQ=",
       "Microsoft.JSInterop.WebAssembly.8eb000j8w7.wasm": "sha256-sGms9Oai1ztzgfMsqBvmeKwa5ZyGWr/AEXr6thw0lso=",
       "Newtonsoft.Json.qkbufwhni2.wasm": "sha256-GlXMWKvDs45M2pACoR3Y4Qh8mcrOZGljqmvJY+6JZ5s=",
-      "PoE2PassiveTree.f4f5mmgb8q.wasm": "sha256-MXZwIwd+s+u4tlXXAJ1KoMIwFfAI/1Jxz1HeLcRduAI=",
+      "PoE2PassiveTree.5sq6ctermy.wasm": "sha256-FY3O72wjdIpdlcsSHQfMwa2JmNNv4PyLYm3ge37+RC8=",
       "System.Collections.Concurrent.dtlyx5buga.wasm": "sha256-DzhrCSWFocf5MsYClPqSbb/oi1iMghifb2JBpBUD3Fg=",
       "System.Collections.Immutable.7pu3oqzllx.wasm": "sha256-1RHexqLNHbjGiFhVGnr0JdwEMvzUiLUY/ycIrm1O1ZA=",
       "System.Collections.NonGeneric.uml39a9tnh.wasm": "sha256-RnFDgR1ivQNPhqotX0L13hu3d8tHb6zwUmaZvs68J9A=",
