@@ -25,16 +25,7 @@ For the best experience:
 
 ## 🧭 How to Use
 
-### 1. Input Seed and Conqueror
-1. In the top-left menu, enter your Timeless Jewel's **Seed** (a number between **100 and 8000**).
-2. Select the corresponding **Conqueror**:
-   - Vorana
-   - Medved
-   - Olroth
-
----
-
-### 2. Select Jewel Socket
+### 1. Select Jewel Socket. IMPORTANT TO SELECT THIS FIRST BEFORE CHANGING SEED/CONQUEROR. (will update later)
 1. Click on a jewel socket on the passive tree.
    - If you can't reach a socket by clicking after the initial zoom, **refresh the page** and try again.
 2. If no data exists for the selected jewel socket using the inputted Seed and Conqueror, in the "Alternate Passive Summary" you'll see:
@@ -42,6 +33,15 @@ For the best experience:
     ```
     Seed yet to be discovered.
     ```
+
+---
+
+### 2. Input Seed and Conqueror
+1. In the top-left menu, enter your Timeless Jewel's **Seed** (a number between **100 and 8000**).
+2. Select the corresponding **Conqueror**:
+   - Vorana
+   - Medved
+   - Olroth
 
 ---
 
