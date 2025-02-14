@@ -13,21 +13,11 @@ Timeless Jewels in Path of Exile 2 alter Notable passive nodes on the skill tree
 
 ---
 
-## 🚀 Getting Started
-
-### Recommended Browser Settings
-
-For the best experience:
-- This app was built with standard resolution of **1920 x 1080** or **2560 x 1440**.
-- I also silly built it with the browser zoom level to **75%**. Maybe I'll fix this one day, maybe I won't.
-
----
-
 ## 🧭 How to Use
 
-### 1. Select Jewel Socket. IMPORTANT TO SELECT THIS FIRST BEFORE CHANGING SEED/CONQUEROR. (will update later)
+### 1. Select Jewel Socket.
 1. Click on a jewel socket on the passive tree.
-   - If you can't reach a socket by clicking after the initial zoom, **refresh the page** and try again.
+   - If you can't reach a socket by clicking after the initial zoom, **click on reset selection button** (top of screen) and try again.
 2. If no data exists for the selected jewel socket using the inputted Seed and Conqueror, in the "Alternate Passive Summary" you'll see:
 
     ```
@@ -52,11 +42,12 @@ For the best experience:
 4. Ensure your **Seed** and **Conqueror** are correctly filled in the **Input Seed and Conqueror Menu** (top-left).
 5. Go to the top-right menu labeled **Notables In Radius** on the web app.
 6. Enter the data for each corresponding notable.
-7. Click on **Submit Notables** to:
+7. Click on **Submit** to:
    - **Create** a new record if no data exists.
    - **Update** an existing record if the current data is incorrect.
+   - Note: Data will be forced into lowercase, please make sure spelling is the same for duplicate inputs.
 
-**Tip:** After submission, **refresh the page**, select the jewel socket again, and the new or updated Alternate Passive Summary should now be displayed.
+**Tip:** After submission, select the jewel socket again, and the new or updated Alternate Passive Summary should now be displayed.
 
 ---
 
