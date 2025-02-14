@@ -10,8 +10,9 @@ html, body {
     background-color: rgb(15, 15, 15);
     color: white;
 }
+
 #submitNotables {
-    background-color: coral;/* Green gradient */
+    background-color: coral; /* Green gradient */
     color: white;
     border: none;
     border-radius: 8px;
@@ -30,11 +31,6 @@ html, body {
     #submitNotables:active {
         transform: scale(0.98); /* Slight press down effect */
     }
-
-
-#alternate-summary h4 {
-    font-size:22px;
-}
 
 .notable-node.highlighted {
     stroke-width: 12; /* Thicker ring for visibility */
@@ -70,40 +66,54 @@ html, body {
 }
 
 #notable-list {
-    font-size: 20px;
+    padding: 0px;
+    margin: 0px;
+    font-size: 16px;
+    width: 100%;
+    max-width: 350px;
 }
+
+#kofi {
+    position: fixed; /* Keeps it in the same spot on screen */
+    bottom: 20px; /* Distance from the bottom */
+    left: 20px; /* Distance from the left */
+    z-index: 9999; /* Ensures it stays on top of everything */
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
 
 #notable-list-container {
     position: absolute;
     top: 20px;
-    right: 20px;
+    right: 20px; /* Move it slightly right */
     background: rgb(25, 27, 43, 0.82);
     color: white;
-    padding: 10px;
+    padding: 8px;
     border-radius: 10px;
-    max-width: 600px;
+    max-width: 350px; /* Reduce max width */
+    width: 350px; /* Set it to a responsive width */
     font-family: Arial, Helvetica, sans-serif;
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Align items to the left */
-    justify-content: flex-start; /* Align content to the top */
+    align-items: flex-start;
+    justify-content: flex-start;
+    font-size: 16px; /* Reduce text size slightly */
 }
+
     #notable-list-container h2 {
-        text-align: center; /* Center the text horizontally */
-        margin: 0; /* Remove default margin */
-        padding-bottom: 10px; /* Add space below the title */
-        width: 100%; /* Ensure the header takes full width to center */
-    }
-    #notable-list-container label {
-        display: flex;
-        align-items: center;
-        margin-bottom: 5px; /* Reduce the bottom margin to minimize the space between label and input */
+        font-size: 28px; /* Reduce title size */
+        text-align: center;
+        margin: 0;
+        padding-bottom: 8px;
+        width: 100%;
     }
 
 .jewel-socket-ring {
     stroke-width: 8; /* Thicker ring for visibility */
-    fill: none; /* Make sure the fill is transparent so the ring is visible */
-    animation: rainbowColorCycle 24s infinite linear; /* Longer animation duration for smooth transition */
+    fill: white; /* Make sure the fill is transparent so the ring is visible */
+    animation: rainbowColorCycle 12s infinite linear; /* Longer animation duration for smooth transition */
 }
 
 /* Rainbow solid color animation */
@@ -112,24 +122,20 @@ html, body {
         stroke: red;
     }
 
-    15% {
+    20% {
         stroke: orange;
     }
 
-    30% {
-        stroke: yellow;
-    }
-
-    45% {
-        stroke: limegreen;
+    40% {
+        stroke: lime;
     }
 
     60% {
         stroke: cyan;
     }
 
-    85% {
-        stroke: hotpink;
+    80% {
+        stroke: blue;
     }
 
     100% {
@@ -140,76 +146,80 @@ html, body {
 .summary-item {
     cursor: pointer;
     padding: 2px;
-    font-size: 24px;
+    font-size: 14px;
     font-family: Arial, Helvetica, sans-serif;
 }
 
-
-#seed {
-    font-size: 24px;
-    width: 100%;
-    padding: 8px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+.summary-item:hover {
+    color: red;
 }
+
+.summary-item:focus {
+    color: red;
+}
+
 /* Make sure the form appears above the SVG */
 #input-form {
-    position: absolute; /* Make it absolute so it can overlay */
-    top: 20px; /* Adjust the distance from the top if needed */
-    left: 20px; /* Adjust the distance from the left if needed */
-    z-index: 1000; /* Ensure it's above the SVG */
-    background: rgb(25, 27, 43, 0.82); /* Add a semi-transparent background for readability */
-    padding: 15px;
+    position: absolute;
+    top: 20px;
+    left: 20px; /* Move it slightly right */
+    z-index: 1000;
+    background: rgb(25, 27, 43, 0.82);
+    padding: 12px;
     border-radius: 8px;
-    color: white; /* Change text color for contrast */
-    width: 350px; /* Set width of the form */
+    color: white;
+    width: 280px; /* Reduce form width */
+    font-size: 16px;
     font-family: Arial, Helvetica, sans-serif;
+}
+
+#seed {
+    width: 260px;
+    padding: 10px;
 }
 
     #input-form label {
-        font-size: 24px;
+        font-size: 18px;
     }
 
     /* Optional: Style the inputs and button */
     #input-form input,
     #input-form select {
         width: 100%;
-        padding: 0px;
+        padding: 4px;
         margin: 10px 0;
         border: 1px solid #ccc;
         border-radius: 4px;
-        font-size: 24px;
+        font-size: 16px;
         background: rgb(25, 27, 43, 0.82);
-        color: white;s
+        color: white;
     }
 
 #summary-container {
     position: absolute;
-    top: 0px; /* Adjust as needed */
-    right: 650px; /* Adjust as needed */
-    background: rgba(0, 0, 0, 0.8);
-    color: white;
-    padding: 10px;
-    border-radius: 8px;
-    z-index: 9999; /* Ensure it's above the SVG */
-    max-width: 300px;
-    overflow-y: auto;
-    font-size: 18px;
-    font-family: Arial, Helvetica, sans-serif;
+    top: 0px;
+    right: 400px; /* Move slightly right */
     background: rgb(25, 27, 43, 0.82);
+    color: white;
+    padding: 8px;
+    border-radius: 8px;
+    max-width: 200px; /* Reduce width */
+    width: 200px;
+    overflow-y: auto;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 #notable-list-container input[type="text"] {
-    font-size: 18px;
+    font-size: 15px;
     padding: 5px; /* Adjust padding inside the input */
-    margin-left: 20px; /* Add some space between label and input */
+    margin-left: 10px; /* Add some space between label and input */
     background: rgb(25, 27, 43, 0.82);
     color: white;
     border: 1px solid #ccc; /* Border for input box */
     border-radius: 4px;
-    width: 50%; /* Limit the width of the input box to 40% of the container */
-    max-width: 250px; /* Maximum width of the input box */
+    width: 125px; /* Limit the width of the input box to 40% of the container */
+    max-width: 200px; /* Maximum width of the input box */
 }
 
 #input-form button {
@@ -223,6 +233,10 @@ html, body {
     font-size: 24px;
 }
 
+#input-form h1 {
+    margin-top: 0px;
+}
+
 #submitNotables {
     width: 100%;
     padding: 10px;
@@ -231,9 +245,34 @@ html, body {
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    font-size: 24px;
+    font-size: 18px;
 }
 
-        #input-form button:hover {
-            background-color: #45a049;
-        }
+#input-form button:hover {
+    background-color: #45a049;
+}
+
+#alternate-summary h4 {
+    margin-top: 0px;
+    margin-bottom: 5px;
+    font-size: 20px;
+}
+
+.summary-item {
+    cursor: pointer;
+    padding: 2px;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white; /* Default color */
+}
+
+    /* Hover effect, but only if not selected */
+    .summary-item:hover:not(.selected) {
+        color: red;
+    }
+
+    /* Keep the selected item red */
+    .summary-item.selected {
+        color: red;
+    }
+
