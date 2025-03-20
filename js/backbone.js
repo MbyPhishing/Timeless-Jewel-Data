@@ -186,25 +186,44 @@ function findNotableNodesInRange(_0x33fb49, _0x32ffa9, _0x580210, _0x2f7766, _0x
 }
 function showAlternateNotables(event) {
     const notableNode = event.target;
-
-    // Find the modal container and alternateNotablesList div
     const modal = document.getElementById('modal');
     const alternateListDiv = document.getElementById('alternateNotablesList');
+    const searchInput = document.getElementById('notableSearch');
 
-    // Clear any previous alternate notables
+    // Clear previous options
     alternateListDiv.innerHTML = '';
 
-    // Add the alternate notable options to the modal
+    // Populate new options
     alternateNotables.forEach(option => {
         const optionButton = document.createElement('button');
         optionButton.textContent = option;
+        optionButton.className = "notable-option"; // Add CSS class for styling
+
         optionButton.onclick = () => selectAlternateNotable(option, notableNode);
         alternateListDiv.appendChild(optionButton);
     });
 
-    // Show the modal
+    // Show modal
     modal.style.display = 'flex';
+
+    // Clear search input when opening modal
+    searchInput.value = '';
+
+    // Attach search filtering event
+    searchInput.oninput = function () {
+        const searchTerm = searchInput.value.toLowerCase();
+        const buttons = alternateListDiv.querySelectorAll(".notable-option");
+
+        buttons.forEach(button => {
+            if (button.textContent.toLowerCase().includes(searchTerm)) {
+                button.style.display = "block";
+            } else {
+                button.style.display = "none";
+            }
+        });
+    };
 }
+
 document.getElementById('closeModalBtn').addEventListener('click', closeModal);
 function selectAlternateNotable(alternate, notableNode) {
     // Find the corresponding input field in the "Notables in Radius" list
