@@ -14,9 +14,19 @@
 <body>
     <!-- The root div with id="app" is where Blazor will mount the app -->
     <div id="app"></div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <h3>Select an Alternate Notable</h3>
+            <div id="alternateNotablesList"></div> <!-- This will hold the list of alternates -->
+            <button id="closeModalBtn">Close</button>
+        </div>
+    </div>
+
     <div id="notable-list-container" style="display:none;">
         <h2>Notables In Radius</h2>
         <ul id="notable-list"></ul>
+        <datalist id="notable-options"></datalist>
     </div>
 
     <div id="summary-container" style="margin-top: 20px; display:none;">

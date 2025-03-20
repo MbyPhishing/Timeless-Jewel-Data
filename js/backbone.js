@@ -1,1 +1,465 @@
-﻿const _0x8a2eb2 = _0x3825; (function (_0x2c1686, _0x5dd457) { const _0xebfc12 = _0x3825, _0x5c8def = _0x2c1686(); while (!![]) { try { const _0x30ea9f = parseInt(_0xebfc12(0x101)) / 0x1 + -parseInt(_0xebfc12(0xd9)) / 0x2 * (-parseInt(_0xebfc12(0x164)) / 0x3) + -parseInt(_0xebfc12(0x162)) / 0x4 + parseInt(_0xebfc12(0x166)) / 0x5 * (-parseInt(_0xebfc12(0x160)) / 0x6) + -parseInt(_0xebfc12(0x151)) / 0x7 + parseInt(_0xebfc12(0xf5)) / 0x8 * (parseInt(_0xebfc12(0x177)) / 0x9) + parseInt(_0xebfc12(0x11c)) / 0xa * (parseInt(_0xebfc12(0x137)) / 0xb); if (_0x30ea9f === _0x5dd457) break; else _0x5c8def['push'](_0x5c8def['shift']()); } catch (_0x25acd7) { _0x5c8def['push'](_0x5c8def['shift']()); } } }(_0x546e, 0x98008)); function _0x3825(_0x9f2379, _0x5bcdfa) { const _0x546e2c = _0x546e(); return _0x3825 = function (_0x3825c9, _0xb4d833) { _0x3825c9 = _0x3825c9 - 0xd9; let _0xdfdf02 = _0x546e2c[_0x3825c9]; return _0xdfdf02; }, _0x3825(_0x9f2379, _0x5bcdfa); } let svg, zoomPanWrapper, offsetX = 0x0, offsetY = 0x0, scale = 0.15, alternateNotables = []; const supabase = window['supabase'][_0x8a2eb2(0x128)](_0x8a2eb2(0x17c), _0x8a2eb2(0x107)); function initializeSvgClickPan() { const _0x3bb9ef = _0x8a2eb2; loadAlternateNotables(), centerAndZoomTree(), svg = document['getElementById'](_0x3bb9ef(0x12f)), zoomPanWrapper = svg?.[_0x3bb9ef(0x15f)]('#zoom-pan-wrapper'); if (!svg || !zoomPanWrapper) { console[_0x3bb9ef(0x157)]('SVG\x20or\x20zoom-pan-wrapper\x20not\x20found!'); return; } const _0x11f7cb = document[_0x3bb9ef(0xf6)](_0x3bb9ef(0x170)); _0x11f7cb && _0x11f7cb[_0x3bb9ef(0x123)](_0x3bb9ef(0xe7), centerAndZoomTree), document[_0x3bb9ef(0x13d)](_0x3bb9ef(0x105))[_0x3bb9ef(0x106)](_0x2a114e => { const _0x294a19 = _0x3bb9ef; _0x2a114e[_0x294a19(0x123)](_0x294a19(0xe7), function () { panAndZoomToNode(this), handleJewelSocketClick(this); }); }), document[_0x3bb9ef(0x13d)](_0x3bb9ef(0x15d))[_0x3bb9ef(0x106)](_0x2b9dc1 => { const _0x10ee63 = _0x3bb9ef; _0x2b9dc1[_0x10ee63(0x123)](_0x10ee63(0xf4), showTooltip), _0x2b9dc1[_0x10ee63(0x123)](_0x10ee63(0xef), moveTooltip), _0x2b9dc1['addEventListener']('mouseout', hideTooltip); }), document[_0x3bb9ef(0xf6)]('seed')['addEventListener'](_0x3bb9ef(0xf0), handleJewelSocketUpdate), document[_0x3bb9ef(0xf6)](_0x3bb9ef(0xdd))[_0x3bb9ef(0x123)](_0x3bb9ef(0xf0), handleJewelSocketUpdate); } async function loadAlternateNotables() { const _0x3e6a98 = _0x8a2eb2, _0x354df9 = await fetch(_0x3e6a98(0x13f)), _0x50e0d9 = await _0x354df9[_0x3e6a98(0xdc)](); alternateNotables = Object[_0x3e6a98(0x14e)](_0x50e0d9)[_0x3e6a98(0x174)](_0x22ed63 => _0x22ed63['Skill']), populateOptions(); } async function handleJewelSocketUpdate() { const _0x3cf7fd = _0x8a2eb2; let _0x3d1085 = document[_0x3cf7fd(0x15f)](_0x3cf7fd(0x143)); _0x3d1085 && await handleJewelSocketClick(_0x3d1085); } function showTooltip(_0x588f29) { const _0x3f8d15 = _0x8a2eb2, _0x363f20 = document[_0x3f8d15(0xf6)](_0x3f8d15(0x16b)), _0x2cd7c1 = _0x588f29[_0x3f8d15(0xf1)][_0x3f8d15(0xfd)]('data-name'), _0xa7016c = _0x588f29[_0x3f8d15(0xf1)][_0x3f8d15(0xfd)](_0x3f8d15(0x146)); _0x2cd7c1 && (_0xa7016c ? _0x363f20[_0x3f8d15(0x144)] = _0x2cd7c1 + _0x3f8d15(0x173) + _0xa7016c + ')' : _0x363f20['textContent'] = _0x2cd7c1, _0x363f20[_0x3f8d15(0x12d)][_0x3f8d15(0x12b)] = _0x3f8d15(0x11a), _0x363f20[_0x3f8d15(0x12d)][_0x3f8d15(0xde)] = _0x3f8d15(0xfa)); } function moveTooltip(_0x4817f0) { const _0x518553 = _0x8a2eb2, _0x3e50f8 = document[_0x518553(0xf6)](_0x518553(0x16b)); _0x3e50f8[_0x518553(0x12d)][_0x518553(0x125)] = _0x4817f0[_0x518553(0x10c)] + 0xa + 'px', _0x3e50f8[_0x518553(0x12d)][_0x518553(0x165)] = _0x4817f0[_0x518553(0x17e)] + 0xa + 'px'; } function hideTooltip() { const _0x1c9ba9 = _0x8a2eb2, _0x1a8842 = document[_0x1c9ba9(0xf6)](_0x1c9ba9(0x16b)); _0x1a8842[_0x1c9ba9(0x12d)][_0x1c9ba9(0x12b)] = _0x1c9ba9(0xea); } async function handleJewelSocketClick(_0x30afcd) { const _0x17786c = _0x8a2eb2; if (!_0x30afcd) return; document[_0x17786c(0x13d)](_0x17786c(0x15d))[_0x17786c(0x106)](_0x3f50ca => { const _0x43e321 = _0x17786c; _0x3f50ca['classList'][_0x43e321(0x103)](_0x43e321(0x11b)); }), document[_0x17786c(0x13d)](_0x17786c(0x105))[_0x17786c(0x106)](_0x4ad6db => _0x4ad6db[_0x17786c(0x147)](_0x17786c(0x178))), _0x30afcd['setAttribute'](_0x17786c(0x178), 'true'); const _0x2f75ac = _0x30afcd[_0x17786c(0xfd)]('id'), _0x4c7e19 = document[_0x17786c(0xf6)](_0x17786c(0x15a))[_0x17786c(0x145)], _0x344d63 = document[_0x17786c(0xf6)]('conqueror')['value'], { data: _0x18469c, error: _0x34b896 } = await supabase[_0x17786c(0x136)](_0x17786c(0xfe))[_0x17786c(0x13c)](_0x17786c(0x132))['eq'](_0x17786c(0x142), _0x2f75ac)['eq'](_0x17786c(0x15a), parseInt(_0x4c7e19))['eq'](_0x17786c(0xdd), _0x344d63)[_0x17786c(0x153)]({ 'headers': { 'Accept': _0x17786c(0x11e) } }); _0x34b896 && _0x34b896['code'] !== _0x17786c(0x113) && console[_0x17786c(0x157)](_0x17786c(0x163), _0x34b896); let _0x17ef52 = []; _0x18469c && _0x18469c[_0x17786c(0x132)] && (_0x17ef52 = JSON[_0x17786c(0xdb)](_0x18469c[_0x17786c(0x132)])); const _0x232460 = parseFloat(_0x30afcd['getAttribute']('cx')), _0x52a096 = parseFloat(_0x30afcd[_0x17786c(0xfd)]('cy')); if (isNaN(_0x232460) || isNaN(_0x52a096)) { console['error'](_0x17786c(0x122)); return; } let _0x5032d7 = document[_0x17786c(0xf6)]('radius-visual'); _0x5032d7 && _0x5032d7[_0x17786c(0x103)](); const _0x1f37f3 = document[_0x17786c(0x109)](_0x17786c(0x14d), _0x17786c(0x117)); _0x1f37f3[_0x17786c(0x148)]('id', _0x17786c(0x100)), _0x1f37f3['setAttribute']('cx', _0x232460), _0x1f37f3[_0x17786c(0x148)]('cy', _0x52a096), _0x1f37f3[_0x17786c(0x148)]('r', 0xaf), _0x1f37f3[_0x17786c(0x148)](_0x17786c(0x118), 'none'), _0x1f37f3[_0x17786c(0x148)]('stroke', _0x17786c(0x10e)), _0x1f37f3[_0x17786c(0x148)](_0x17786c(0x169), '2'), _0x1f37f3[_0x17786c(0x148)](_0x17786c(0x131), _0x17786c(0x149)), document['getElementById']('zoom-pan-wrapper')[_0x17786c(0x16c)](_0x1f37f3), panAndZoomToNode(_0x30afcd), findNotableNodesInRange(parseFloat(_0x30afcd[_0x17786c(0xfd)]('cx')), parseFloat(_0x30afcd[_0x17786c(0xfd)]('cy')), 0xaf, _0x30afcd, _0x17ef52); } function panAndZoomToNode(_0x564762) { const _0x163065 = _0x8a2eb2, _0x2e548d = parseFloat(_0x564762[_0x163065(0xfd)]('cx')), _0x590d1d = parseFloat(_0x564762['getAttribute']('cy')); document[_0x163065(0xf6)](_0x163065(0x170))[_0x163065(0x12d)][_0x163065(0x12b)] = _0x163065(0x11a); if (isNaN(_0x2e548d) || isNaN(_0x590d1d)) { console['error'](_0x163065(0xe5)); return; } const _0x20be36 = window['innerWidth'], _0x36d744 = window[_0x163065(0xe2)]; offsetX = _0x20be36 / 0x2 - _0x2e548d * scale, offsetY = _0x36d744 / 0x2 - _0x590d1d * scale, zoomPanWrapper['style']['transition'] = _0x163065(0x155), zoomPanWrapper['setAttribute'](_0x163065(0x17b), _0x163065(0x13a) + offsetX + ',\x20' + offsetY + _0x163065(0x14f) + scale + ')'), setTimeout(() => { const _0x30876e = _0x163065; scale = 1.2, offsetX = _0x20be36 / 0x2 - _0x2e548d * scale, offsetY = _0x36d744 / 0x2 - _0x590d1d * scale, zoomPanWrapper['style']['transition'] = _0x30876e(0x155), zoomPanWrapper[_0x30876e(0x148)]('transform', _0x30876e(0x13a) + offsetX + ',\x20' + offsetY + ')\x20scale(' + scale + ')'); }, 0x190); } function findNotableNodesInRange(_0xf5f8b6, _0x1728ff, _0x5386db, _0x55fce9, _0x24d712 = []) { const _0x2a2c72 = _0x8a2eb2; document[_0x2a2c72(0x13d)](_0x2a2c72(0x15d))['forEach'](_0x1c0341 => { const _0x5d7cec = _0x2a2c72; _0x1c0341[_0x5d7cec(0x148)](_0x5d7cec(0x118), _0x5d7cec(0xe8)), _0x1c0341[_0x5d7cec(0x148)](_0x5d7cec(0xec), 'default'), _0x1c0341[_0x5d7cec(0x141)](_0x5d7cec(0xe7), showAlternateNotables); }); let _0x56329c = []; document[_0x2a2c72(0x13d)](_0x2a2c72(0xee))['forEach'](_0x5d49c8 => { const _0x91f2bf = _0x2a2c72; _0x5d49c8[_0x91f2bf(0x147)](_0x91f2bf(0x146)); }), document[_0x2a2c72(0x13d)](_0x2a2c72(0xee))[_0x2a2c72(0x106)](_0x30da83 => { const _0x3747ec = _0x2a2c72, _0x2f0444 = parseFloat(_0x30da83[_0x3747ec(0xfd)]('cx')), _0x2a2b9f = parseFloat(_0x30da83['getAttribute']('cy')); if (!isNaN(_0x2f0444) && !isNaN(_0x2a2b9f)) { const _0x19c9e0 = Math[_0x3747ec(0x108)]((_0x2f0444 - _0xf5f8b6) ** 0x2 + (_0x2a2b9f - _0x1728ff) ** 0x2); if (_0x19c9e0 <= _0x5386db) { const _0x21d027 = _0x30da83[_0x3747ec(0xfd)](_0x3747ec(0x115)); if (_0x21d027 && _0x21d027 !== _0x3747ec(0x114)) { let _0x28e345 = _0x24d712[_0x3747ec(0xf8)](_0x4c2c93 => _0x4c2c93[_0x3747ec(0x16a)] === _0x21d027)?.[_0x3747ec(0x119)] || ''; _0x28e345 ? _0x30da83[_0x3747ec(0x148)](_0x3747ec(0x146), _0x28e345) : _0x30da83[_0x3747ec(0x147)](_0x3747ec(0x146)), _0x30da83[_0x3747ec(0x148)](_0x3747ec(0x118), _0x3747ec(0x154)), _0x30da83[_0x3747ec(0x148)](_0x3747ec(0xec), _0x3747ec(0xed)), _0x56329c[_0x3747ec(0x17a)]({ 'name': _0x21d027, 'x': _0x2f0444, 'y': _0x2a2b9f, 'alternate': _0x28e345 }), _0x30da83[_0x3747ec(0x123)]('click', showAlternateNotables); } } } }), updateNotableList(_0x56329c, _0x55fce9); } function showAlternateNotables(_0x270889) { const _0x40cfc9 = _0x8a2eb2, _0x3bb6b3 = _0x270889[_0x40cfc9(0xf1)], _0x5ea949 = document[_0x40cfc9(0xf6)](_0x40cfc9(0x156)), _0x4067e1 = document[_0x40cfc9(0xf6)](_0x40cfc9(0x10b)); _0x4067e1['innerHTML'] = '', alternateNotables[_0x40cfc9(0x106)](_0x5f4a94 => { const _0x446988 = _0x40cfc9, _0x446aa5 = document[_0x446988(0x16f)](_0x446988(0x152)); _0x446aa5[_0x446988(0x144)] = _0x5f4a94, _0x446aa5[_0x446988(0xf3)] = () => selectAlternateNotable(_0x5f4a94, _0x3bb6b3), _0x4067e1['appendChild'](_0x446aa5); }), _0x5ea949[_0x40cfc9(0x12d)][_0x40cfc9(0x12b)] = _0x40cfc9(0x12a); } document[_0x8a2eb2(0xf6)](_0x8a2eb2(0x168))['addEventListener']('click', closeModal); function selectAlternateNotable(_0x82f257, _0x4d313e) { const _0x56c25b = _0x8a2eb2, _0x329a42 = document[_0x56c25b(0x15f)](_0x56c25b(0x159) + _0x4d313e[_0x56c25b(0xfd)]('data-name') + '\x22]'); _0x329a42 && (_0x329a42[_0x56c25b(0x145)] = _0x82f257, _0x329a42[_0x56c25b(0x12d)]['borderColor'] = 'white', _0x4d313e[_0x56c25b(0x148)](_0x56c25b(0x146), _0x82f257)), updateAlternateSummary(), closeModal(); } function closeModal() { const _0x31edb0 = _0x8a2eb2, _0xa9e44c = document[_0x31edb0(0xf6)](_0x31edb0(0x156)); _0xa9e44c[_0x31edb0(0x12d)]['display'] = _0x31edb0(0xea); } function populateOptions() { const _0x94c27d = _0x8a2eb2, _0x854eba = document[_0x94c27d(0xf6)](_0x94c27d(0xfc)); _0x854eba['innerHTML'] = '', alternateNotables[_0x94c27d(0x106)](_0x30891c => { const _0x3e566a = _0x94c27d; let _0x2fe55f = document['createElement'](_0x3e566a(0x16d)); _0x2fe55f['value'] = _0x30891c, _0x854eba[_0x3e566a(0x16c)](_0x2fe55f); }); } function updateNotableList(_0x447435, _0x22c17c) { const _0x4ed1a0 = _0x8a2eb2, _0x492920 = document[_0x4ed1a0(0xf6)](_0x4ed1a0(0x138)); if (!_0x492920) return; _0x492920[_0x4ed1a0(0x12c)] = ''; if (_0x447435[_0x4ed1a0(0x17f)] === 0x0) { _0x492920[_0x4ed1a0(0x12c)] = _0x4ed1a0(0x140); return; } _0x447435[_0x4ed1a0(0x106)](_0x47c829 => { const _0x89a416 = _0x4ed1a0; let _0x25d8d1 = document['createElement'](_0x89a416(0x179)); _0x25d8d1[_0x89a416(0x12d)][_0x89a416(0x12b)] = _0x89a416(0x12a), _0x25d8d1[_0x89a416(0x12d)][_0x89a416(0x16e)] = _0x89a416(0x135), _0x25d8d1[_0x89a416(0x12d)]['marginBottom'] = _0x89a416(0x17d), _0x25d8d1['style'][_0x89a416(0xda)] = _0x89a416(0x14c), _0x25d8d1[_0x89a416(0x12d)]['padding'] = _0x89a416(0x14c); let _0x278a16 = document['createElement']('span'); _0x278a16[_0x89a416(0x144)] = _0x47c829[_0x89a416(0x110)], _0x278a16[_0x89a416(0x12d)][_0x89a416(0x12a)] = '1', _0x278a16[_0x89a416(0x12d)][_0x89a416(0x112)] = '150px', _0x278a16[_0x89a416(0x12d)][_0x89a416(0xe6)] = 'right', _0x278a16[_0x89a416(0x12d)][_0x89a416(0xde)] = _0x89a416(0xfa); let _0x3ca4c7 = document[_0x89a416(0x16f)](_0x89a416(0x171)); _0x3ca4c7[_0x89a416(0x144)] = _0x89a416(0x116), _0x3ca4c7['style'][_0x89a416(0xda)] = _0x89a416(0x158), _0x3ca4c7[_0x89a416(0x12d)][_0x89a416(0x112)] = _0x89a416(0x10f); let _0x3cc96e = document[_0x89a416(0x16f)](_0x89a416(0x15e)); _0x3cc96e[_0x89a416(0xf7)] = _0x89a416(0x130), _0x3cc96e[_0x89a416(0x133)] = _0x89a416(0x175), _0x3cc96e['dataset'][_0x89a416(0xe9)] = _0x47c829['name'], _0x3cc96e['value'] = _0x47c829[_0x89a416(0x119)], _0x3cc96e['setAttribute'](_0x89a416(0x14a), _0x89a416(0xfc)), _0x3cc96e[_0x89a416(0x15b)] = () => validateInput(_0x3cc96e), _0x25d8d1['appendChild'](_0x278a16), _0x25d8d1[_0x89a416(0x16c)](_0x3ca4c7), _0x25d8d1[_0x89a416(0x16c)](_0x3cc96e), _0x492920['appendChild'](_0x25d8d1); }); let _0x43fc51 = document[_0x4ed1a0(0x16f)](_0x4ed1a0(0x179)); _0x43fc51['style'][_0x4ed1a0(0xe6)] = 'center', _0x43fc51[_0x4ed1a0(0x12d)]['marginTop'] = _0x4ed1a0(0x161), _0x43fc51[_0x4ed1a0(0x12d)]['width'] = _0x4ed1a0(0xfb); let _0x208c96 = document['createElement'](_0x4ed1a0(0x152)); _0x208c96[_0x4ed1a0(0x144)] = 'Submit', _0x208c96[_0x4ed1a0(0x12d)][_0x4ed1a0(0x13b)] = _0x4ed1a0(0x161), _0x208c96['id'] = 'submitNotables', _0x208c96[_0x4ed1a0(0xf3)] = () => submitNotableSelections(_0x22c17c), _0x43fc51[_0x4ed1a0(0x16c)](_0x208c96), _0x492920[_0x4ed1a0(0x16c)](_0x43fc51); let _0x2f9b06 = document[_0x4ed1a0(0xf6)]('alternate-summary'); !_0x2f9b06 && (_0x2f9b06 = document[_0x4ed1a0(0x16f)](_0x4ed1a0(0x179)), _0x2f9b06['id'] = _0x4ed1a0(0x124), _0x2f9b06[_0x4ed1a0(0x12c)] = _0x4ed1a0(0x120), document[_0x4ed1a0(0xf6)](_0x4ed1a0(0x167))[_0x4ed1a0(0x16c)](_0x2f9b06)), document[_0x4ed1a0(0xf6)](_0x4ed1a0(0x167))[_0x4ed1a0(0x12d)][_0x4ed1a0(0x12b)] = _0x4ed1a0(0x11a), document[_0x4ed1a0(0xf6)](_0x4ed1a0(0xe0))[_0x4ed1a0(0x12d)]['display'] = _0x4ed1a0(0x11a), updateAlternateSummary(); } function validateInput(_0x58acd0) { const _0x1921bf = _0x8a2eb2, _0x232033 = _0x58acd0[_0x1921bf(0x145)]['trim']()['toLowerCase'](); alternateNotables[_0x1921bf(0xeb)](_0x528580 => _0x528580[_0x1921bf(0x134)]() === _0x232033) ? _0x58acd0[_0x1921bf(0x12d)][_0x1921bf(0x14b)] = 'white' : _0x58acd0['style']['borderColor'] = _0x1921bf(0xe1); } function updateAlternateSummary() { const _0x5afaef = _0x8a2eb2; let _0x1dac2e = {}, _0x12878d = document[_0x5afaef(0x13d)]('#notable-list\x20input'); _0x12878d[_0x5afaef(0x106)](_0x474577 => { const _0x2d8e46 = _0x5afaef; let _0x1c2d85 = _0x474577[_0x2d8e46(0x145)]['trim'](); _0x1c2d85 && (_0x1dac2e[_0x1c2d85] = (_0x1dac2e[_0x1c2d85] || 0x0) + 0x1); }); let _0x39737a = Object[_0x5afaef(0x13e)](_0x1dac2e)[_0x5afaef(0x121)]((_0xa7c49a, _0x45d8ee) => _0x45d8ee[0x1] - _0xa7c49a[0x1])[_0x5afaef(0x174)](([_0x259477, _0x3d4d93]) => ({ 'name': _0x259477, 'count': _0x3d4d93 })), _0x4bdedb = document['getElementById'](_0x5afaef(0x124)); _0x4bdedb && (_0x4bdedb[_0x5afaef(0x12c)] = _0x5afaef(0xf9), _0x39737a[_0x5afaef(0x17f)] ? _0x39737a[_0x5afaef(0x106)](({ name: _0x12225c, count: _0x2884b3 }) => { const _0x10ddf5 = _0x5afaef; let _0x3a21d7 = document['createElement']('div'); _0x3a21d7[_0x10ddf5(0xff)][_0x10ddf5(0xf2)](_0x10ddf5(0x111)), _0x3a21d7[_0x10ddf5(0x144)] = '(' + _0x2884b3 + ')\x20' + _0x12225c, _0x3a21d7[_0x10ddf5(0x123)](_0x10ddf5(0xe7), function () { const _0x298fe3 = _0x10ddf5; document[_0x298fe3(0x13d)]('.summary-item')['forEach'](_0xf1ba15 => { const _0x255b1b = _0x298fe3; _0xf1ba15[_0x255b1b(0xff)]['remove']('selected'); }), this[_0x298fe3(0xff)][_0x298fe3(0xf2)](_0x298fe3(0x178)), highlightNotables(_0x12225c); }), _0x4bdedb[_0x10ddf5(0x16c)](_0x3a21d7); }) : _0x4bdedb['innerHTML'] += '<p>Seed\x20yet\x20to\x20be\x20discovered.</p>'), _0x4bdedb[_0x5afaef(0x12d)][_0x5afaef(0x12b)] = _0x5afaef(0x11a); } function highlightNotables(_0x340314) { const _0x4d3933 = _0x8a2eb2; document[_0x4d3933(0x13d)]('.notable-node')[_0x4d3933(0x106)](_0x1db381 => { const _0x3469c = _0x4d3933; _0x1db381[_0x3469c(0xff)]['remove']('highlighted'); }), document['querySelectorAll'](_0x4d3933(0x15d))[_0x4d3933(0x106)](_0x2d729f => { const _0x3a7971 = _0x4d3933; let _0x1d656e = _0x2d729f['getAttribute']('data-alternate'); _0x1d656e === _0x340314 && _0x2d729f['classList'][_0x3a7971(0xf2)](_0x3a7971(0x11b)); }); } function centerAndZoomTree() { const _0x3cba64 = _0x8a2eb2, _0x3a4eb2 = document['getElementById'](_0x3cba64(0x104)); if (!_0x3a4eb2) return; document['getElementById'](_0x3cba64(0x170))['style']['display'] = _0x3cba64(0xea), document[_0x3cba64(0x13d)]('.jewel-socket-socket')[_0x3cba64(0x106)](_0x1a678e => _0x1a678e[_0x3cba64(0x147)](_0x3cba64(0x178))), document[_0x3cba64(0x13d)](_0x3cba64(0x15d))['forEach'](_0x573230 => { const _0x59ec1c = _0x3cba64; _0x573230['classList']['remove'](_0x59ec1c(0x11b)), _0x573230[_0x59ec1c(0x148)](_0x59ec1c(0x118), _0x59ec1c(0xe8)), _0x573230[_0x59ec1c(0x148)](_0x59ec1c(0xec), _0x59ec1c(0x10a)), _0x573230[_0x59ec1c(0x141)](_0x59ec1c(0xe7), showAlternateNotables); }), document['getElementById']('summary-container')[_0x3cba64(0x12d)][_0x3cba64(0x12b)] = 'none', document[_0x3cba64(0xf6)](_0x3cba64(0xe0))[_0x3cba64(0x12d)][_0x3cba64(0x12b)] = _0x3cba64(0xea); const _0x4a741c = _0x3a4eb2[_0x3cba64(0x127)](), _0x5b6292 = window[_0x3cba64(0x176)], _0x4d22ed = window[_0x3cba64(0xe2)]; scale = 0.15, offsetX = _0x5b6292 / 0x2 - (_0x4a741c['x'] + _0x4a741c[_0x3cba64(0x112)] / 0x2) * scale, offsetY = _0x4d22ed / 0x2 - (_0x4a741c['y'] + _0x4a741c[_0x3cba64(0xe3)] / 0x2) * scale, _0x3a4eb2['setAttribute'](_0x3cba64(0x17b), 'translate(' + offsetX + ',\x20' + offsetY + ')\x20scale(0.32)'); } function _0x546e() { const _0x5b7e12 = ['nodeName', 'none', 'some', 'cursor', 'pointer', '.jewel-socket-ring,\x20.notable-node', 'mousemove', 'change', 'target', 'add', 'onclick', 'mouseover', '16rfdQiu', 'getElementById', 'type', 'find', '<h4>Replaced\x20Passives\x20(click\x20to\x20find)</h4>', '16px', '100%', 'notable-options', 'getAttribute', 'notable_submissions', 'classList', 'radius-visual', '265149pRfwUm', 'Notables\x20updated\x20successfully!', 'remove', 'zoom-pan-wrapper', '.jewel-socket-socket', 'forEach', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtjdHBraW9ncmh1anhrb3ppZnBtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzkzMjE3NTYsImV4cCI6MjA1NDg5Nzc1Nn0.fKjso6WZ3tTNvlL2BVa6LnRze8QdhrvlGX3Gprejngw', 'sqrt', 'createElementNS', 'default', 'alternateNotablesList', 'pageX', 'Please\x20enter\x20valid\x20alternate\x20passives\x20for\x20all\x20nodes.', 'white', '1px', 'name', 'summary-item', 'width', 'PGRST116', 'Unknown\x20Node', 'data-name', '\x20|\x20', 'circle', 'fill', 'alternate', 'block', 'highlighted', '54790dhQKMk', '#notable-list\x20input', 'application/json', 'code', '<h4>Alternate\x20Passive\x20Summary</h4><p>Loading...</p>', 'sort', 'Error:\x20Jewel\x20socket\x20coordinates\x20not\x20found.', 'addEventListener', 'alternate-summary', 'left', 'Failed\x20to\x20submit\x20data.', 'getBBox', 'createClient', 'stringify', 'flex', 'display', 'innerHTML', 'style', 'dataset', 'passive-tree-svg', 'text', 'stroke-dasharray', 'notables', 'placeholder', 'toLowerCase', 'center', 'from', '4004dYCXmM', 'notable-list', 'Notables\x20submitted\x20successfully!', 'translate(', 'marginTop', 'select', 'querySelectorAll', 'entries', 'data/alternate_passive_skills.json', '<p>Seed\x20yet\x20to\x20be\x20discovered.</p>', 'removeEventListener', 'socket_id', '.jewel-socket-socket[selected]', 'textContent', 'value', 'data-alternate', 'removeAttribute', 'setAttribute', '5,5', 'list', 'borderColor', '0px', 'http://www.w3.org/2000/svg', 'values', ')\x20scale(', 'Error\x20checking\x20existing\x20data:', '1964599XFSdxL', 'button', 'maybeSingle', 'yellow', 'transform\x200.4s\x20ease-in-out', 'modal', 'error', '0px\x2020px', '#notable-list\x20input[data-node-name=\x22', 'seed', 'oninput', 'trim', '.notable-node', 'input', 'querySelector', '2032302KZDWmz', '10px', '4532216bbuNZF', 'Error\x20fetching\x20data:', '6eGOiHt', 'top', '10ssTnfG', 'summary-container', 'closeModalBtn', 'stroke-width', 'original', 'tooltip', 'appendChild', 'option', 'alignItems', 'createElement', 'reset-zoom-button', 'span', 'insert', '\x20(Alt:\x20', 'map', 'Enter\x20alt\x20notable', 'innerWidth', '1112544ZgAxFy', 'selected', 'div', 'push', 'transform', 'https://kctpkiogrhujxkozifpm.supabase.co', '5px', 'pageY', 'length', '207008IMkHtX', 'margin', 'parse', 'json', 'conqueror', 'fontSize', 'Error\x20updating\x20data:', 'notable-list-container', 'red', 'innerHeight', 'height', 'Error\x20checking\x20existing\x20data.', 'Node\x20coordinates\x20are\x20invalid!', 'textAlign', 'click', 'gray']; _0x546e = function () { return _0x5b7e12; }; return _0x546e(); } async function submitNotableSelections(_0x142423) { const _0x3df7e8 = _0x8a2eb2, _0x320bb2 = document[_0x3df7e8(0xf6)]('seed')[_0x3df7e8(0x145)], _0x144f36 = document[_0x3df7e8(0xf6)]('conqueror')[_0x3df7e8(0x145)], _0x11ae6c = _0x142423[_0x3df7e8(0xfd)]('id'); let _0x32364b = document['querySelectorAll'](_0x3df7e8(0x11d)), _0x335f8b = [], _0x4f27d5 = !![]; _0x32364b[_0x3df7e8(0x106)](_0x5cfc3a => { const _0x23e9f2 = _0x3df7e8; let _0x581a5f = _0x5cfc3a[_0x23e9f2(0x12e)][_0x23e9f2(0xe9)], _0x4b7d60 = _0x5cfc3a[_0x23e9f2(0x145)][_0x23e9f2(0x15c)]()[_0x23e9f2(0x134)](); const _0x1d7a62 = alternateNotables[_0x23e9f2(0xeb)](_0x1e40c1 => _0x1e40c1['toLowerCase']() === _0x4b7d60); if (!_0x4b7d60) _0x5cfc3a[_0x23e9f2(0x12d)][_0x23e9f2(0x14b)] = _0x23e9f2(0xe1), _0x4f27d5 = ![]; else { const _0x442903 = alternateNotables[_0x23e9f2(0xeb)](_0x5ae0d4 => _0x5ae0d4['toLowerCase']() === _0x4b7d60); !_0x442903 ? (_0x5cfc3a[_0x23e9f2(0x12d)]['borderColor'] = _0x23e9f2(0xe1), _0x4f27d5 = ![]) : _0x5cfc3a[_0x23e9f2(0x12d)][_0x23e9f2(0x14b)] = ''; } _0x335f8b[_0x23e9f2(0x17a)]({ 'original': _0x581a5f, 'alternate': _0x4b7d60 || null }); }); if (!_0x4f27d5) { alert(_0x3df7e8(0x10d)); return; } const { data: _0x4b97b4, error: _0x127420 } = await supabase[_0x3df7e8(0x136)]('notable_submissions')[_0x3df7e8(0x13c)]('id')['eq'](_0x3df7e8(0x142), _0x11ae6c)['eq']('seed', parseInt(_0x320bb2))['eq']('conqueror', _0x144f36)[_0x3df7e8(0x153)](); if (_0x127420 && _0x127420[_0x3df7e8(0x11f)] !== _0x3df7e8(0x113)) { console[_0x3df7e8(0x157)](_0x3df7e8(0x150), _0x127420), alert(_0x3df7e8(0xe4)); return; } if (_0x4b97b4) { const { error: _0x1df65d } = await supabase[_0x3df7e8(0x136)](_0x3df7e8(0xfe))['update']({ 'notables': JSON[_0x3df7e8(0x129)](_0x335f8b) })['eq']('id', _0x4b97b4['id']); _0x1df65d ? (console[_0x3df7e8(0x157)](_0x3df7e8(0xdf), _0x1df65d), alert('Failed\x20to\x20update\x20data.')) : alert(_0x3df7e8(0x102)); } else { const { error: _0x4a6b5a } = await supabase[_0x3df7e8(0x136)](_0x3df7e8(0xfe))[_0x3df7e8(0x172)]([{ 'socket_id': _0x11ae6c, 'seed': parseInt(_0x320bb2), 'conqueror': _0x144f36, 'notables': JSON[_0x3df7e8(0x129)](_0x335f8b) }]); _0x4a6b5a ? (console[_0x3df7e8(0x157)]('Error\x20inserting\x20data:', _0x4a6b5a), alert(_0x3df7e8(0x126))) : alert(_0x3df7e8(0x139)); } }
+﻿let svg;
+let zoomPanWrapper;
+let offsetX = 0x0;
+let offsetY = 0x0;
+let scale = 0.15;
+let alternateNotables = [];
+const supabase = window.supabase.createClient('https://kctpkiogrhujxkozifpm.supabase.co', "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtjdHBraW9ncmh1anhrb3ppZnBtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzkzMjE3NTYsImV4cCI6MjA1NDg5Nzc1Nn0.fKjso6WZ3tTNvlL2BVa6LnRze8QdhrvlGX3Gprejngw");
+function initializeSvgClickPan() {
+    loadAlternateNotables();
+    centerAndZoomTree();
+    svg = document.getElementById('passive-tree-svg');
+    zoomPanWrapper = svg?.["querySelector"]("#zoom-pan-wrapper");
+    if (!svg || !zoomPanWrapper) {
+        console.error("SVG or zoom-pan-wrapper not found!");
+        return;
+    }
+    const _0x1a90b2 = document.getElementById("reset-zoom-button");
+    if (_0x1a90b2) {
+        _0x1a90b2.addEventListener('click', centerAndZoomTree);
+    }
+    document.querySelectorAll(".jewel-socket-socket").forEach(_0x34334f => {
+        _0x34334f.addEventListener("click", function () {
+            panAndZoomToNode(this);
+            handleJewelSocketClick(this);
+        });
+    });
+    document.querySelectorAll(".notable-node").forEach(_0x13949f => {
+        _0x13949f.addEventListener("mouseover", showTooltip);
+        _0x13949f.addEventListener("mousemove", moveTooltip);
+        _0x13949f.addEventListener('mouseout', hideTooltip);
+    });
+    document.getElementById('seed').addEventListener("change", handleJewelSocketUpdate);
+    document.getElementById('conqueror').addEventListener("change", handleJewelSocketUpdate);
+}
+async function loadAlternateNotables() {
+    const response = await fetch('data/alternate_passive_skills.json');
+    const jsonData = await response.json(); // Parse the JSON file
+
+    // Extract only the "Skill" values into an array
+    alternateNotables = Object.values(jsonData).map(entry => entry.Skill);
+
+    //console.log(alternateNotables); // Check if it contains the skill names
+    populateOptions();
+}
+
+async function handleJewelSocketUpdate() {
+    let _0x9b8bde = document.querySelector(".jewel-socket-socket[selected]");
+    if (_0x9b8bde) {
+        await handleJewelSocketClick(_0x9b8bde);
+    }
+}
+function showTooltip(_0x3fd83f) {
+    const _0x4cf3dd = document.getElementById("tooltip");
+    const _0x1f0def = _0x3fd83f.target.getAttribute("data-name");
+    const _0x4d6e79 = _0x3fd83f.target.getAttribute("data-alternate");
+    if (_0x1f0def) {
+        if (_0x4d6e79) {
+            _0x4cf3dd.textContent = _0x1f0def + " (Alt: " + _0x4d6e79 + ')';
+        } else {
+            _0x4cf3dd.textContent = _0x1f0def;
+        }
+        _0x4cf3dd.style.display = "block";
+        _0x4cf3dd.style.fontSize = '16px';
+    }
+}
+function moveTooltip(_0x5ad1fc) {
+    const _0x1f15af = document.getElementById("tooltip");
+    _0x1f15af.style.left = _0x5ad1fc.pageX + 0xa + 'px';
+    _0x1f15af.style.top = _0x5ad1fc.pageY + 0xa + 'px';
+}
+function hideTooltip() {
+    const _0x30f54f = document.getElementById("tooltip");
+    _0x30f54f.style.display = "none";
+}
+async function handleJewelSocketClick(_0x521935) {
+    if (!_0x521935) {
+        return;
+    }
+    document.querySelectorAll('.notable-node').forEach(_0x4d2fd5 => {
+        _0x4d2fd5.classList.remove("highlighted");
+    });
+    document.querySelectorAll(".jewel-socket-socket").forEach(_0x28a686 => _0x28a686.removeAttribute("selected"));
+    _0x521935.setAttribute("selected", "true");
+    const _0x4cce95 = _0x521935.getAttribute('id');
+    const _0x15adad = document.getElementById('seed').value;
+    const _0x4c1bf7 = document.getElementById("conqueror").value;
+    const {
+        data: _0x2c8f9d,
+        error: _0x3c58df
+    } = await supabase.from('notable_submissions').select('notables').eq("socket_id", _0x4cce95).eq("seed", parseInt(_0x15adad)).eq("conqueror", _0x4c1bf7).maybeSingle({
+        'headers': {
+            'Accept': "application/json"
+        }
+    });
+    if (_0x3c58df && _0x3c58df.code !== "PGRST116") {
+        console.error("Error fetching data:", _0x3c58df);
+    }
+    let _0x51c039 = [];
+    if (_0x2c8f9d && _0x2c8f9d.notables) {
+        _0x51c039 = JSON.parse(_0x2c8f9d.notables);
+    }
+    const _0x58a8d1 = parseFloat(_0x521935.getAttribute('cx'));
+    const _0x551bca = parseFloat(_0x521935.getAttribute('cy'));
+    if (isNaN(_0x58a8d1) || isNaN(_0x551bca)) {
+        console.error("Error: Jewel socket coordinates not found.");
+        return;
+    }
+    let _0x4768ff = document.getElementById("radius-visual");
+    if (_0x4768ff) {
+        _0x4768ff.remove();
+    }
+    const _0x291358 = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+    _0x291358.setAttribute('id', "radius-visual");
+    _0x291358.setAttribute('cx', _0x58a8d1);
+    _0x291358.setAttribute('cy', _0x551bca);
+    _0x291358.setAttribute('r', 0xaf);
+    _0x291358.setAttribute("fill", 'none');
+    _0x291358.setAttribute("stroke", "white");
+    _0x291358.setAttribute("stroke-width", '2');
+    _0x291358.setAttribute("stroke-dasharray", "5,5");
+    document.getElementById("zoom-pan-wrapper").appendChild(_0x291358);
+    panAndZoomToNode(_0x521935);
+    findNotableNodesInRange(parseFloat(_0x521935.getAttribute('cx')), parseFloat(_0x521935.getAttribute('cy')), 0xaf, _0x521935, _0x51c039);
+}
+function panAndZoomToNode(_0x263852) {
+    const _0x2cfb5d = parseFloat(_0x263852.getAttribute('cx'));
+    const _0x3055f1 = parseFloat(_0x263852.getAttribute('cy'));
+    document.getElementById("reset-zoom-button").style.display = "block";
+    if (isNaN(_0x2cfb5d) || isNaN(_0x3055f1)) {
+        console.error("Node coordinates are invalid!");
+        return;
+    }
+    const _0x145669 = window.innerWidth;
+    const _0x438a12 = window.innerHeight;
+    offsetX = _0x145669 / 0x2 - _0x2cfb5d * scale;
+    offsetY = _0x438a12 / 0x2 - _0x3055f1 * scale;
+    zoomPanWrapper.style.transition = "transform 0.4s ease-in-out";
+    zoomPanWrapper.setAttribute("transform", 'translate(' + offsetX + ", " + offsetY + ") scale(" + scale + ')');
+    setTimeout(() => {
+        scale = 1.2;
+        offsetX = _0x145669 / 0x2 - _0x2cfb5d * scale;
+        offsetY = _0x438a12 / 0x2 - _0x3055f1 * scale;
+        zoomPanWrapper.style.transition = "transform 0.4s ease-in-out";
+        zoomPanWrapper.setAttribute("transform", "translate(" + offsetX + ", " + offsetY + ") scale(" + scale + ')');
+    }, 0x190);
+}
+function findNotableNodesInRange(_0x33fb49, _0x32ffa9, _0x580210, _0x2f7766, _0x22a1b1 = []) {
+    document.querySelectorAll(".notable-node").forEach(_0x554d49 => {
+        _0x554d49.setAttribute("fill", 'gray');
+        _0x554d49.setAttribute("cursor", "default");
+        _0x554d49.removeEventListener('click', showAlternateNotables);
+    });
+    let _0x1a196f = [];
+    document.querySelectorAll(".jewel-socket-ring, .notable-node").forEach(_0x2542ea => {
+        _0x2542ea.removeAttribute('data-alternate');
+    });
+    document.querySelectorAll(".jewel-socket-ring, .notable-node").forEach(_0x22d258 => {
+        const _0x36e7b1 = parseFloat(_0x22d258.getAttribute('cx'));
+        const _0x43ffdc = parseFloat(_0x22d258.getAttribute('cy'));
+        if (!isNaN(_0x36e7b1) && !isNaN(_0x43ffdc)) {
+            const _0x479ae7 = Math.sqrt((_0x36e7b1 - _0x33fb49) ** 0x2 + (_0x43ffdc - _0x32ffa9) ** 0x2);
+            if (_0x479ae7 <= _0x580210) {
+                const _0x2ee961 = _0x22d258.getAttribute('data-name');
+                if (_0x2ee961 && _0x2ee961 !== "Unknown Node") {
+                    let _0x4b1b37 = _0x22a1b1.find(_0x21d891 => _0x21d891.original === _0x2ee961)?.["alternate"] || '';
+                    if (_0x4b1b37) {
+                        _0x22d258.setAttribute("data-alternate", _0x4b1b37);
+                    } else {
+                        _0x22d258.removeAttribute("data-alternate");
+                    }
+                    _0x22d258.setAttribute("fill", "yellow");
+                    _0x22d258.setAttribute("cursor", "pointer");
+                    _0x1a196f.push({
+                        'name': _0x2ee961,
+                        'x': _0x36e7b1,
+                        'y': _0x43ffdc,
+                        'alternate': _0x4b1b37
+                    });
+
+                    _0x22d258.addEventListener('click', showAlternateNotables);
+                }
+            }
+        }
+    });
+    updateNotableList(_0x1a196f, _0x2f7766);
+}
+function showAlternateNotables(event) {
+    const notableNode = event.target;
+
+    // Find the modal container and alternateNotablesList div
+    const modal = document.getElementById('modal');
+    const alternateListDiv = document.getElementById('alternateNotablesList');
+
+    // Clear any previous alternate notables
+    alternateListDiv.innerHTML = '';
+
+    // Add the alternate notable options to the modal
+    alternateNotables.forEach(option => {
+        const optionButton = document.createElement('button');
+        optionButton.textContent = option;
+        optionButton.onclick = () => selectAlternateNotable(option, notableNode);
+        alternateListDiv.appendChild(optionButton);
+    });
+
+    // Show the modal
+    modal.style.display = 'flex';
+}
+document.getElementById('closeModalBtn').addEventListener('click', closeModal);
+function selectAlternateNotable(alternate, notableNode) {
+    // Find the corresponding input field in the "Notables in Radius" list
+    const inputField = document.querySelector(`#notable-list input[data-node-name="${notableNode.getAttribute("data-name")}"]`);
+
+    if (inputField) {
+        inputField.value = alternate;  // Set the value of the input field to the selected alternate notable
+        inputField.style.borderColor = 'white';
+
+        notableNode.setAttribute("data-alternate", alternate);
+    }
+    updateAlternateSummary();
+    closeModal();
+}
+
+function closeModal() {
+    const modal = document.getElementById('modal');
+    modal.style.display = 'none';  // Hide the modal
+}
+
+function populateOptions() {
+    const nodeList = document.getElementById("notable-options");
+    nodeList.innerHTML = "";  // Clear any previous options if you are updating dynamically
+
+    alternateNotables.forEach(node => {
+        let option = document.createElement("option");
+        option.value = node;
+        nodeList.appendChild(option);
+    });
+
+    //console.log(nodeList);
+}
+function updateNotableList(_0x380e63, _0x8798b5) {
+    const _0x2e37f8 = document.getElementById("notable-list");
+    if (!_0x2e37f8) {
+        return;
+    }
+    _0x2e37f8.innerHTML = '';
+    if (_0x380e63.length === 0x0) {
+        _0x2e37f8.innerHTML = "<p>Seed yet to be discovered.</p>";
+        return;
+    }
+    _0x380e63.forEach(_0x8a7c06 => {
+        let _0x111af5 = document.createElement("div");
+        _0x111af5.style.display = "flex";
+        _0x111af5.style.alignItems = 'center';
+        _0x111af5.style.marginBottom = "5px";
+        _0x111af5.style.margin = "0px";
+        _0x111af5.style.padding = "0px";
+        let _0x51012d = document.createElement('span');
+        _0x51012d.textContent = _0x8a7c06.name;
+        _0x51012d.style.flex = '1';
+        _0x51012d.style.width = "150px";
+        _0x51012d.style.textAlign = "right";
+        _0x51012d.style.fontSize = "16px";
+        let _0x581f28 = document.createElement('span');
+        _0x581f28.textContent = " | ";
+        _0x581f28.style.margin = "0px 20px";
+        _0x581f28.style.width = "1px";
+        let _0x334b54 = document.createElement("input");
+        _0x334b54.type = "text";
+        _0x334b54.placeholder = "Enter alt notable";
+        _0x334b54.dataset.nodeName = _0x8a7c06.name;
+        _0x334b54.value = _0x8a7c06.alternate;
+        _0x334b54.setAttribute("list", "notable-options");
+
+        // Add input validation for each input field
+        _0x334b54.oninput = () => validateInput(_0x334b54);
+
+        _0x111af5.appendChild(_0x51012d);
+        _0x111af5.appendChild(_0x581f28);
+        _0x111af5.appendChild(_0x334b54);
+        _0x2e37f8.appendChild(_0x111af5);
+    });
+
+    let _0x4f19b5 = document.createElement("div");
+    _0x4f19b5.style.textAlign = "center";
+    _0x4f19b5.style.marginTop = '10px';
+    _0x4f19b5.style.width = "100%";
+    let _0x1e2224 = document.createElement("button");
+    _0x1e2224.textContent = "Submit";
+    _0x1e2224.style.marginTop = "10px";
+    _0x1e2224.id = "submitNotables";
+    _0x1e2224.onclick = () => submitNotableSelections(_0x8798b5);
+    _0x4f19b5.appendChild(_0x1e2224);
+    _0x2e37f8.appendChild(_0x4f19b5);
+    let _0x4e06ef = document.getElementById("alternate-summary");
+    if (!_0x4e06ef) {
+        _0x4e06ef = document.createElement("div");
+        _0x4e06ef.id = "alternate-summary";
+        _0x4e06ef.innerHTML = "<h4>Alternate Passive Summary</h4><p>Loading...</p>";
+        document.getElementById('summary-container').appendChild(_0x4e06ef);
+    }
+    document.getElementById("summary-container").style.display = "block";
+    document.getElementById("notable-list-container").style.display = "block";
+
+    updateAlternateSummary();
+}
+function validateInput(inputField) {
+    const normalizedInput = inputField.value.trim().toLowerCase(); // Normalize to lowercase
+
+    if (alternateNotables.some(notable => notable.toLowerCase() === normalizedInput)) {
+        inputField.style.borderColor = 'white'; // Reset any error styling
+    } else {
+        inputField.style.borderColor = 'red'; // Highlight invalid input
+    }
+}
+function updateAlternateSummary() {
+    let _0x344968 = {};
+    let _0x2c5391 = document.querySelectorAll("#notable-list input");
+    _0x2c5391.forEach(_0x4d2c8d => {
+        let _0x11e837 = _0x4d2c8d.value.trim();
+        if (_0x11e837) {
+            _0x344968[_0x11e837] = (_0x344968[_0x11e837] || 0x0) + 0x1;
+        }
+    });
+    let _0xce6269 = Object.entries(_0x344968).sort((_0x178055, _0x51d419) => _0x51d419[0x1] - _0x178055[0x1]).map(([_0x221ed0, _0x480099]) => ({
+        'name': _0x221ed0,
+        'count': _0x480099
+    }));
+    let _0x19cd74 = document.getElementById('alternate-summary');
+    if (_0x19cd74) {
+        _0x19cd74.innerHTML = "<h4>Replaced Passives (click to find)</h4>";
+        if (_0xce6269.length) {
+            _0xce6269.forEach(({
+                name: _0x3bc8c0,
+                count: _0x3186fd
+            }) => {
+                let _0x2f1703 = document.createElement('div');
+                _0x2f1703.classList.add('summary-item');
+                _0x2f1703.textContent = '(' + _0x3186fd + ") " + _0x3bc8c0;
+                _0x2f1703.addEventListener("click", function () {
+                    document.querySelectorAll(".summary-item").forEach(_0x2ba8dc => {
+                        _0x2ba8dc.classList.remove("selected");
+                    });
+                    this.classList.add("selected");
+                    highlightNotables(_0x3bc8c0);
+                });
+                _0x19cd74.appendChild(_0x2f1703);
+            });
+        } else {
+            _0x19cd74.innerHTML += "<p>Seed yet to be discovered.</p>";
+        }
+    }
+    _0x19cd74.style.display = "block";
+}
+function highlightNotables(_0x5a5968) {
+    document.querySelectorAll('.notable-node').forEach(_0x13c928 => {
+        _0x13c928.classList.remove("highlighted");
+    });
+    document.querySelectorAll(".notable-node").forEach(_0x5d2731 => {
+        let _0x22a970 = _0x5d2731.getAttribute("data-alternate");
+        if (_0x22a970 === _0x5a5968) {
+            _0x5d2731.classList.add("highlighted");
+        }
+    });
+}
+function centerAndZoomTree() {
+    const _0x1a2c6b = document.getElementById('zoom-pan-wrapper');
+    if (!_0x1a2c6b) {
+        return;
+    }
+    document.getElementById("reset-zoom-button").style.display = "none";
+    document.querySelectorAll(".jewel-socket-socket").forEach(_0x46d245 => _0x46d245.removeAttribute("selected"));
+    document.querySelectorAll(".notable-node").forEach(_0x1c7241 => {
+        _0x1c7241.classList.remove("highlighted");
+        _0x1c7241.setAttribute("fill", 'gray');
+        _0x1c7241.setAttribute("cursor", "default");
+        _0x1c7241.removeEventListener('click', showAlternateNotables);
+    });
+    document.getElementById('summary-container').style.display = "none";
+    document.getElementById("notable-list-container").style.display = "none";
+    const _0x321b02 = _0x1a2c6b.getBBox();
+    const _0x4211b3 = window.innerWidth;
+    const _0x231705 = window.innerHeight;
+    scale = 0.15;
+    offsetX = _0x4211b3 / 0x2 - (_0x321b02.x + _0x321b02.width / 0x2) * scale;
+    offsetY = _0x231705 / 0x2 - (_0x321b02.y + _0x321b02.height / 0x2) * scale;
+    _0x1a2c6b.setAttribute("transform", "translate(" + offsetX + ", " + offsetY + ") scale(0.32)");
+}
+async function submitNotableSelections(_0x44b2b6) {
+    const _0x94d9fe = document.getElementById("seed").value;
+    const _0x6eecc5 = document.getElementById("conqueror").value;
+    const _0xd29dd4 = _0x44b2b6.getAttribute('id');
+    let _0x3d3494 = document.querySelectorAll("#notable-list input");
+    let _0x48c0c1 = [];
+    let allValid = true; // Flag to track if all inputs are valid
+    _0x3d3494.forEach(_0x1aef6b => {
+        let _0x4d9f55 = _0x1aef6b.dataset.nodeName;
+        let _0x58de4c = _0x1aef6b.value.trim().toLowerCase(); // Convert input to lowercase
+
+        // Check if the input matches any of the allowed notables (case-insensitive)
+        const validNotable = alternateNotables.some(notable => notable.toLowerCase() === _0x58de4c);
+
+        // Check if the input is empty (null or just whitespace)
+        if (!_0x58de4c) {
+            _0x1aef6b.style.borderColor = 'red'; // Highlight invalid input
+            allValid = false; // Set the validation flag to false
+        } else {
+            // Check if the input matches any of the allowed notables (case-insensitive)
+            const validNotable = alternateNotables.some(notable => notable.toLowerCase() === _0x58de4c);
+
+            // If the input doesn't match any valid notables, highlight it and set the flag to false
+            if (!validNotable) {
+                _0x1aef6b.style.borderColor = 'red'; // Highlight invalid input
+                allValid = false; // Set the validation flag to false
+            } else {
+                _0x1aef6b.style.borderColor = ''; // Reset the border if valid
+            }
+        }
+
+        _0x48c0c1.push({
+            'original': _0x4d9f55,
+            'alternate': _0x58de4c || null
+        });
+    });
+    if (!allValid) {
+        alert("Please enter valid alternate passives for all nodes.");
+        return; // Prevent the form submission
+    }
+    const {
+        data: _0x35a583,
+        error: _0xfcaea3
+    } = await supabase.from("notable_submissions").select('id').eq("socket_id", _0xd29dd4).eq("seed", parseInt(_0x94d9fe)).eq("conqueror", _0x6eecc5).maybeSingle();
+    if (_0xfcaea3 && _0xfcaea3.code !== "PGRST116") {
+        console.error("Error checking existing data:", _0xfcaea3);
+        alert("Error checking existing data.");
+        return;
+    }
+    if (_0x35a583) {
+        const {
+            error: _0x4eb293
+        } = await supabase.from("notable_submissions").update({
+            'notables': JSON.stringify(_0x48c0c1)
+        }).eq('id', _0x35a583.id);
+        if (_0x4eb293) {
+            console.error("Error updating data:", _0x4eb293);
+            alert("Failed to update data.");
+        } else {
+            alert("Notables updated successfully!");
+        }
+    } else {
+        const {
+            error: _0xcb59f7
+        } = await supabase.from("notable_submissions").insert([{
+            'socket_id': _0xd29dd4,
+            'seed': parseInt(_0x94d9fe),
+            'conqueror': _0x6eecc5,
+            'notables': JSON.stringify(_0x48c0c1)
+        }]);
+        if (_0xcb59f7) {
+            console.error("Error inserting data:", _0xcb59f7);
+            alert("Failed to submit data.");
+        } else {
+            alert("Notables submitted successfully!");
+        }
+    }
+}
